@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <item
+        android:id="@+id/nav_check_yourself"
+        android:icon="@drawable/ic_ask_yourself_pic"
+        android:title="@string/are_you_at_risk" />
+
+    <item
+        android:id="@+id/nav_call_toll_numbers"
+        android:icon="@drawable/ic_call_toll"
+        android:title="@string/call_emergency_numbers" />
+
+    <item
+        android:id="@+id/nav_know_more"
+        android:icon="@drawable/ic_learn_more"
+        android:title="@string/learn_more" />
+</menu>

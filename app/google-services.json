@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "403556006283",
+    "firebase_url": "https://coronavirusupdate-202f6.firebaseio.com",
+    "project_id": "coronavirusupdate-202f6",
+    "storage_bucket": "coronavirusupdate-202f6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:403556006283:android:0fdb211ab3499ec1d0578e",
+        "android_client_info": {
+          "package_name": "com.mikeinvents.coronavirusupdate"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "403556006283-bvfd2op91b1l7astjlmisjqd9rf1g1v7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mikeinvents.coronavirusupdate",
+            "certificate_hash": "59845e37b64fe89476d190c5fa67f52710eb9170"
+          }
+        },
+        {
+          "client_id": "403556006283-33pqn8gakoo0crpotp05t0argh45klck.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCdXi47QFwie1HkMKHdEsIQaf21JVKZ2Ag"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "403556006283-33pqn8gakoo0crpotp05t0argh45klck.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,77 @@
+<resources>
+    <string name="app_name">COVID-19</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="fragment_global">Global</string>
+    <string name="fragment_countries">Countries</string>
+    <string name="fragment_news">News Feed</string>
+    <string name="fragment_notes">Notes</string>
+
+    <string name="global_header_string">Cases</string>
+    <string name="global_count_string">10,000,000,000</string>
+    <string name="error_network">No network connection, please check your internet connection and press the refresh button</string>
+    <string name="error_time_out">Connection time out, this may be due to poor internet service. Please press refresh button</string>
+    <string name="number_count">+190</string>
+    <string name="menu_refresh">Refresh</string>
+    <string name="country_name_str">Name:</string>
+    <string name="country_cases_str">Cases:</string>
+    <string name="country_active_cases_str">Active Cases:</string>
+    <string name="country_today_cases_str">Today Cases:</string>
+    <string name="country_deaths_str">Deaths:</string>
+    <string name="country_today_deaths_str">Today Deaths:</string>
+    <string name="country_recoveries_str">Recoveries:</string>
+    <string name="search_country">Search Country</string>
+    <string name="image_desc">News image will be loaded here</string>
+    <string name="news_title_here">News title here</string>
+    <string name="news_content_string">[Content goes here] Install Flutter and Dart plugin for Android Studio.
+        It provides the startup template to create a new Flutter application, option to run and debug
+        Flutter application in the Android studio itself, etc.,Flutter comes with beautiful and
+        customizable widgets for high performance and outstanding mobile application.
+        It fulfills all the custom needs and requirements. Besides these,
+        Flutter offers many more advantages as mentioned below</string>
+    <string name="news_source_name_str">News Source Name</string>
+    <string name="open_in_browser">Open in browser</string>
+    <string name="alert_dialog_string_web">Are you sure you want to load website in your browser</string>
+    <string name="cancel_web">Cancel</string>
+    <string name="yes_web">Yes</string>
+    <string name="nav_drawer_description">It\'s real. Stay Safe.</string>
+    <string name="are_you_at_risk">Are you at risk?</string>
+    <string name="call_emergency_numbers">Call Emergency Number</string>
+    <string name="learn_more">Learn More</string>
+    <string name="asses_yourself_str">Asses yourself about COVID-19</string>
+    <string name="a_sample_text">A Sample Text
+    It provides the startup template to create a new Flutter application, option to run and debug
+        Flutter application in the Android studio itself, etc.,Flutter comes with beautiful and
+        customizable widgets for high performance and outstanding mobile application.
+        It fulfills all the custom needs and requirements. Besides these,
+    </string>
+    <string name="question_yes">Yes</string>
+    <string name="question_no">No</string>
+    <string name="assess_finish_str">Finish</string>
+    <string name="assess_result">Result</string>
+    <string name="result_header_msg">Based on the answers you provided we predict: </string>
+    <string name="result_predict_msg">Result will come here</string>
+    <string name="result_call_str">Call</string>
+    <string name="call_for_help"><b>Call for Help</b></string>
+    <string name="state">Name</string>
+    <string name="call_number_str">08000023455</string>
+    <string name="call_desc">Used to call numbers</string>
+    <string name="call_num_str">911</string>
+    <string name="finish_str">Finish</string>
+    <string name="next_str">Next</string>
+    <string name="result_priority_one_answer">Your symptoms may or may not be related to COVID-19. Please call your primary care provider</string>
+    <string name="result_priority_two_answer">You may have to self-quarantine at home and monitor for symptoms</string>
+    <string name="result_priority_three_answer">You will have to practice social distancing and watch for symptoms.</string>
+    <string name="call_emergency_str">Call NCDC Toll Free Number</string>
+    <string name="emergency_title">Emergency</string>
+    <string name="caller_str">call</string>
+    <string name="learn_more_who_title">Learn More</string>
+    <string name="learn_more_who_message">Get detailed information from WHO</string>
+    <string name="cancel_learn_more">Cancel</string>
+    <string name="okay_learn_more">okay</string>
+
+</resources>

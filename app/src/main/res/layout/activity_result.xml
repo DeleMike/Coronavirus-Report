@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#efefef">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#efefef"
+        tools:context=".ui.ResultActivity">
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/result_card"
+            android:layout_width="450dp"
+            android:layout_height="500dp"
+            android:layout_centerInParent="true"
+            android:layout_margin="16dp"
+            app:cardCornerRadius="2dp"
+            app:cardElevation="4dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/quiz_result_top_img"
+                    android:layout_width="45dp"
+                    android:layout_height="30dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/result_drawable"
+                    android:contentDescription="@string/app_name"
+                    android:scaleType="center"
+                    android:src="@drawable/ic_result_img" />
+
+                <TextView
+                    android:id="@+id/result_msg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/quiz_result_top_img"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="16dp"
+                    android:padding="16dp"
+                    android:text="@string/result_header_msg"
+                    android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+                    android:textColor="@color/colorPrimary" />
+
+                <TextView
+                    android:id="@+id/result_answer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/result_msg"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="16dp"
+                    android:padding="16dp"
+                    android:text="@string/result_predict_msg"
+                    android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+                    android:textColor="@color/colorPrimary" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/result_answer"
+                    android:layout_margin="16dp"
+                    android:orientation="horizontal"
+                    android:padding="16dp">
+
+                    <Button
+                        android:id="@+id/quiz_result_finish"
+                        android:layout_width="75dp"
+                        android:layout_height="wrap_content"
+                        android:background="#00ffffff"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:padding="8dp"
+                        android:text="@string/assess_finish_str"
+                        android:textColor="@color/colorPrimary" />
+
+                    <Button
+                        android:id="@+id/quiz_result_call"
+                        android:layout_width="125dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:background="@drawable/button_drawable"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:padding="8dp"
+                        android:text="@string/result_call_str"
+                        android:textColor="#fff" />
+                </RelativeLayout>
+
+
+                <!--<TextView-->
+                <!--android:id="@+id/quiz_result_congrats_msg"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_below="@id/quiz_reward_img"-->
+                <!--android:layout_centerHorizontal="true"-->
+                <!--android:layout_marginTop="8dp"-->
+                <!--android:text="@string/congratulations"-->
+                <!--android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />-->
+
+                <!--<TextView-->
+                <!--android:id="@+id/quiz_result_course"-->
+                <!--android:layout_width="250dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_below="@id/quiz_result_congrats_msg"-->
+                <!--android:layout_centerHorizontal="true"-->
+                <!--android:layout_marginStart="8dp"-->
+                <!--android:layout_marginTop="8dp"-->
+                <!--android:layout_marginEnd="8dp"-->
+                <!--android:ellipsize="end"-->
+                <!--android:maxLines="1"-->
+                <!--android:padding="16dp"-->
+                <!--android:text="@string/course_taken"-->
+                <!--android:textAlignment="center"-->
+                <!--android:textColor="#000" />-->
+
+                <!--<TextView-->
+                <!--android:id="@+id/quiz_result_score"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_below="@id/quiz_result_course"-->
+                <!--android:layout_centerHorizontal="true"-->
+                <!--android:layout_margin="8dp"-->
+                <!--android:padding="8dp"-->
+                <!--android:text="@string/user_score"-->
+                <!--android:textColor="#000" />-->
+
+                <!--<TextView-->
+                <!--android:id="@+id/quiz_result_special_msg"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_below="@id/quiz_result_score"-->
+                <!--android:layout_centerHorizontal="true"-->
+                <!--android:layout_margin="8dp"-->
+                <!--android:padding="8dp"-->
+                <!--android:text="@string/quiz_special_message"-->
+                <!--android:textColor="#000"-->
+                <!--android:visibility="gone" />-->
+
+                <!--<RelativeLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_alignParentBottom="true"-->
+                <!--android:layout_centerHorizontal="true"-->
+                <!--android:layout_margin="16dp"-->
+                <!--android:orientation="horizontal">-->
+
+                <!--<Button-->
+                <!--android:id="@+id/quiz_result_finish"-->
+                <!--android:layout_width="75dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:background="#00ffffff"-->
+                <!--android:clickable="true"-->
+                <!--android:focusable="true"-->
+                <!--android:padding="8dp"-->
+                <!--android:text="@string/finish"-->
+                <!--android:textColor="@color/colorPrimary" />-->
+
+                <!--<Button-->
+                <!--android:id="@+id/quiz_result_retake"-->
+                <!--android:layout_width="125dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_alignParentEnd="true"-->
+                <!--android:background="@drawable/save_button_background"-->
+                <!--android:clickable="true"-->
+                <!--android:focusable="true"-->
+                <!--android:padding="8dp"-->
+                <!--android:text="@string/take_new_quiz"-->
+                <!--android:textColor="#fff" />-->
+
+
+                <!--</RelativeLayout>-->
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+</ScrollView>
+
