@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.text.Html;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -42,7 +43,7 @@ import java.util.Objects;
 
 
 public class NewsFeedFragment extends Fragment {
-    //private static final String TAG = "NewsFeedFragment";
+    private static final String TAG = "NewsFeedFragment";
 
     private static final String API_KEY = "545460f9b68e461cbe050a704f280bcb";
     private static final String BBC_NEWS_SOURCE = "bbc-news";
@@ -81,17 +82,8 @@ public class NewsFeedFragment extends Fragment {
         mRequestQueue = Volley.newRequestQueue(Objects.requireNonNull(getContext()));
         newsFeedArrayList = new ArrayList<>();
 
-        //getNewsFeedData();
+        getNewsFeedData();
         recyclerViewClick();
-       // new MyAsyncTask().execute();
-//        new Thread(new DataRunnable()).start();
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-               // Log.i(TAG, "run: New Thread started, loaded data");
-                Objects.requireNonNull(getActivity()).runOnUiThread(new DataRunnable());
-            }
-        }).start();
 
         return rootView;
     }
@@ -102,17 +94,7 @@ public class NewsFeedFragment extends Fragment {
      * @link newsapi.org
      */
     private void getNewsFeedData() {
-       getBBCNewsData();
-       getBBCSportData();
-       getCnnData();
-       getNigeriaNewsData();
-       getMedicalNewsData();
-       getTechCrunchData();
-       getFourFourTwoData();
-       getEntertainmentWeeklyData();
-       getNewScientistData();
-       getEspnData();
-
+        getVirusTopHeadline();
     }
 
     private void recyclerViewClick() {
@@ -125,11 +107,15 @@ public class NewsFeedFragment extends Fragment {
                 //Log.i(TAG, "recyclerViewClick() : url = "+newsFeedArrayList.get(index).getWebsiteUrl());
             }
         }));
-        
+
     }
 
 
-    private String buildUrl(String source) {
+    private String buildUrl() {
+        // return "https://newsapi.org/v2/everything?q=telsa&language=en&apikey=545460f9b68e461cbe050a704f280bcb";
+        //return  "https://newsapi.org/v2/everything?q=coronavirus&language=en&apikey=545460f9b68e461cbe050a704f280bcb";
+        // https://newsapi.org/v2/top-headlines?q=coronavirus&language=en&apikey=545460f9b68e461cbe050a704f280bcb
+
         String url;
 
         //build url or link to database
@@ -139,7 +125,7 @@ public class NewsFeedFragment extends Fragment {
                 .appendPath("v2")
                 .appendPath("top-headlines")
                 .appendQueryParameter("q", "coronavirus")
-                .appendQueryParameter("sources", source)
+                .appendQueryParameter("language", "en")
                 .appendQueryParameter("apiKey", API_KEY);
 
         url = builder.build().toString();
@@ -199,6 +185,15 @@ public class NewsFeedFragment extends Fragment {
             @Override
             public void onErrorResponse(VolleyError error) {
                 responseForError(error);
+                newsFeedArrayList.add(
+                        new NewsFeed(
+                                "https://cdn.pixabay.com/photo/2014/11/23/10/49/accidental-slip-542551_960_720.jpg",
+                                "Error",
+                                "Something happened, please request a review.",
+                                "Error", "https://www.google.com"));
+                newsFeedAdapter = new NewsFeedAdapter(getContext(), newsFeedArrayList);
+                recyclerView.setAdapter(newsFeedAdapter);
+                progressBar.setVisibility(View.GONE);
             }
 
 
@@ -225,82 +220,86 @@ public class NewsFeedFragment extends Fragment {
      */
     private ArrayList<NewsFeed> shuffleNews(ArrayList<NewsFeed> newsFeeds) {
         Collections.shuffle(newsFeeds);
-       // Log.i(TAG, "shuffleNews: Shuffled arrayList");
+        // Log.i(TAG, "shuffleNews: Shuffled arrayList");
         return newsFeeds;
 
 
     }
 
+    private void getVirusTopHeadline() {
+        processJSONRequest(buildUrl());
+        Log.i(TAG, "getVirusTopHeadlines: gotten");
+    }
+
     private void getBBCNewsData() {
-        String url = buildUrl(BBC_NEWS_SOURCE);
-        processJSONRequest(url);
-       // Log.i(TAG, "getBBCNewsData: gotten");
+        // String url = buildUrl(BBC_NEWS_SOURCE);
+//        processJSONRequest(url);
+        // Log.i(TAG, "getBBCNewsData: gotten");
     }
 
     private void getBBCSportData() {
-        String url = buildUrl(BBC_SPORT_SOURCE);
-        processJSONRequest(url);
+        // String url = buildUrl(BBC_SPORT_SOURCE);
+        //  processJSONRequest(url);
         //Log.i(TAG, "getBBCSportData: gotten");
     }
 
     private void getCnnData() {
-        String url = buildUrl(CNN_SOURCE);
-        processJSONRequest(url);
+//        String url = buildUrl(CNN_SOURCE);
+//        processJSONRequest(url);
         //Log.i(TAG, "getCnnData: gotten");
     }
 
     private void getNigeriaNewsData() {
-        Uri.Builder builder = new Uri.Builder();
-        builder.scheme("https")
-                .authority("newsapi.org")
-                .appendPath("v2")
-                .appendPath("top-headlines")
-                .appendQueryParameter("country", NIGERIA_CODE_SOURCE)
-                .appendQueryParameter("apiKey", API_KEY);
-
-        String url = builder.build().toString();
-        processJSONRequest(url);
-
+//        Uri.Builder builder = new Uri.Builder();
+//        builder.scheme("https")
+//                .authority("newsapi.org")
+//                .appendPath("v2")
+//                .appendPath("top-headlines")
+//                .appendQueryParameter("country", NIGERIA_CODE_SOURCE)
+//                .appendQueryParameter("apiKey", API_KEY);
+//
+//        String url = builder.build().toString();
+//        processJSONRequest(url);
 
 
         //Log.i(TAG, "getNigeriaNewsData: gotten");
     }
 
     private void getMedicalNewsData() {
-        String url = buildUrl(MEDICAL_NEWS_SOURCE);
-        processJSONRequest(url);
+//        String url = buildUrl(MEDICAL_NEWS_SOURCE);
+//        processJSONRequest(url);
         //Log.i(TAG, "getMedicalNewsData: gotten");
     }
 
     private void getTechCrunchData() {
-        String url = buildUrl(TECH_CRUNCH_SOURCE);
-        processJSONRequest(url);
+//        String url = buildUrl(TECH_CRUNCH_SOURCE);
+//        processJSONRequest(url);
         //Log.i(TAG, "getTechCrunchData: gotten");
     }
 
     private void getFourFourTwoData() {
-        String url = buildUrl(FOUR_FOUR_TWO_SOURCE);
-        processJSONRequest(url);
-       // Log.i(TAG, "getFourFourTwoData: gotten");
+//        String url = buildUrl(FOUR_FOUR_TWO_SOURCE);
+//        processJSONRequest(url);
+        // Log.i(TAG, "getFourFourTwoData: gotten");
     }
 
     private void getEntertainmentWeeklyData() {
-        String url = buildUrl(ENTERTAINMENT_WEEKLY);
-        processJSONRequest(url);
+//        String url = buildUrl(ENTERTAINMENT_WEEKLY);
+//        processJSONRequest(url);
         //Log.i(TAG, "getEntertainmentWeeklyData: gotten");
 
     }
 
     private void getEspnData() {
-        String url = buildUrl(ESPN_SOURCE);
-        processJSONRequest(url);
-       // Log.i(TAG, "getEspnData: gotten");
+//        String url = buildUrl(ESPN_SOURCE);
+//        processJSONRequest(url);
+        // Log.i(TAG, "getEspnData: gotten");
 
     }
 
     private void getNewScientistData() {
-        String url = buildUrl(NEWS_SCIENTIST_SOURCE);
-        processJSONRequest(url);
+//        String url = buildUrl(NEWS_SCIENTIST_SOURCE);
+//        processJSONRequest(url);
         //Log.i(TAG, "getNewScientistData: gotten");
 
     }
