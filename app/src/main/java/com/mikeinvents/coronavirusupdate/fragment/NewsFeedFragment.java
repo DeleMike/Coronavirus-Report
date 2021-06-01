@@ -112,10 +112,6 @@ public class NewsFeedFragment extends Fragment {
 
 
     private String buildUrl() {
-        // return "https://newsapi.org/v2/everything?q=telsa&language=en&apikey=545460f9b68e461cbe050a704f280bcb";
-        //return  "https://newsapi.org/v2/everything?q=coronavirus&language=en&apikey=545460f9b68e461cbe050a704f280bcb";
-        // https://newsapi.org/v2/top-headlines?q=coronavirus&language=en&apikey=545460f9b68e461cbe050a704f280bcb
-
         String url;
 
         //build url or link to database
